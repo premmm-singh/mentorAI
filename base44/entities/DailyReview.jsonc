@@ -1,0 +1,50 @@
+{
+  "name": "DailyReview",
+  "type": "object",
+  "properties": {
+    "review_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "completed_tasks": {
+      "type": "string",
+      "description": "What user completed today"
+    },
+    "ai_feedback": {
+      "type": "string",
+      "description": "AI feedback on the day"
+    },
+    "next_day_plan": {
+      "type": "string",
+      "description": "AI-generated plan for next day"
+    },
+    "productivity_score": {
+      "type": "number",
+      "description": "Score out of 10"
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "great",
+        "good",
+        "okay",
+        "tired",
+        "stressed"
+      ]
+    }
+  },
+  "required": [
+    "review_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

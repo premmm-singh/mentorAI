@@ -1,0 +1,52 @@
+{
+  "name": "StudySession",
+  "type": "object",
+  "properties": {
+    "topic": {
+      "type": "string",
+      "description": "Topic being studied"
+    },
+    "explanation": {
+      "type": "string",
+      "description": "User's explanation of the topic"
+    },
+    "ai_feedback": {
+      "type": "string",
+      "description": "AI's feedback on the explanation"
+    },
+    "score": {
+      "type": "number",
+      "description": "Score out of 10"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Session duration in minutes"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "linked_goal_id": {
+      "type": "string",
+      "description": "ID of the user profile goal this session contributes to"
+    },
+    "linked_goal_text": {
+      "type": "string",
+      "description": "Snapshot of the goal text for display purposes"
+    }
+  },
+  "required": [
+    "topic"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

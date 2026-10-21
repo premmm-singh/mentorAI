@@ -1,0 +1,53 @@
+{
+  "name": "InterviewSession",
+  "type": "object",
+  "properties": {
+    "company": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "round": {
+      "type": "string"
+    },
+    "verdict": {
+      "type": "string",
+      "enum": [
+        "Strong Hire",
+        "Hire",
+        "No Hire",
+        "Strong No Hire"
+      ]
+    },
+    "score": {
+      "type": "number"
+    },
+    "strengths": {
+      "type": "string"
+    },
+    "weaknesses": {
+      "type": "string"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "company",
+    "role",
+    "round"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

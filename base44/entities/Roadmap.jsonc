@@ -1,0 +1,44 @@
+{
+  "name": "Roadmap",
+  "type": "object",
+  "properties": {
+    "goal": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "weeks_data": {
+      "type": "string",
+      "description": "JSON stringified weeks array"
+    },
+    "completed_tasks": {
+      "type": "string",
+      "description": "JSON stringified array of completed task keys"
+    },
+    "created_date_str": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "goal"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

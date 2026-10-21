@@ -1,0 +1,53 @@
+{
+  "name": "MorningRoutine",
+  "type": "object",
+  "properties": {
+    "routine_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "wake_up_time": {
+      "type": "string",
+      "description": "Time user woke up"
+    },
+    "mood": {
+      "type": "string",
+      "enum": [
+        "energetic",
+        "good",
+        "neutral",
+        "tired",
+        "groggy"
+      ]
+    },
+    "exercise_done": {
+      "type": "boolean",
+      "default": false
+    },
+    "meditation_done": {
+      "type": "boolean",
+      "default": false
+    },
+    "reading_done": {
+      "type": "boolean",
+      "default": false
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "routine_date"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

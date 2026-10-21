@@ -1,0 +1,52 @@
+{
+  "name": "DSASession",
+  "type": "object",
+  "properties": {
+    "concept": {
+      "type": "string",
+      "description": "DSA concept taught"
+    },
+    "problem": {
+      "type": "string",
+      "description": "Problem given to user"
+    },
+    "user_code": {
+      "type": "string",
+      "description": "User's C++ code submission"
+    },
+    "ai_feedback": {
+      "type": "string",
+      "description": "AI evaluation of code"
+    },
+    "score": {
+      "type": "number",
+      "description": "Score out of 10"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "linked_goal_id": {
+      "type": "string",
+      "description": "ID of the user profile goal this session contributes to"
+    },
+    "linked_goal_text": {
+      "type": "string",
+      "description": "Snapshot of the goal text for display purposes"
+    }
+  },
+  "required": [
+    "concept"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

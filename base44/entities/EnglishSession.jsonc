@@ -1,0 +1,54 @@
+{
+  "name": "EnglishSession",
+  "type": "object",
+  "properties": {
+    "session_type": {
+      "type": "string",
+      "enum": [
+        "grammar",
+        "vocabulary",
+        "conversation",
+        "writing",
+        "fill_blank",
+        "word_scramble",
+        "idioms",
+        "pronunciation",
+        "listening"
+      ],
+      "description": "Type of English practice"
+    },
+    "ai_question": {
+      "type": "string",
+      "description": "Question asked by AI"
+    },
+    "user_response": {
+      "type": "string",
+      "description": "User's answer"
+    },
+    "ai_correction": {
+      "type": "string",
+      "description": "AI's correction and feedback"
+    },
+    "score": {
+      "type": "number"
+    },
+    "session_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [
+    "session_type"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

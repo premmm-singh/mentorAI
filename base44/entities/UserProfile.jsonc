@@ -1,0 +1,227 @@
+{
+  "name": "UserProfile",
+  "type": "object",
+  "properties": {
+    "display_name": {
+      "type": "string",
+      "description": "User's display name"
+    },
+    "onboarding_field": {
+      "type": "string",
+      "description": "Primary field the user chose during onboarding",
+      "enum": [
+        "software_engineering",
+        "data_science_ml",
+        "web_development",
+        "competitive_programming",
+        "general_studies",
+        "english_communication",
+        "product_design",
+        "other"
+      ]
+    },
+    "onboarding_interests": {
+      "type": "array",
+      "description": "Interest areas selected during onboarding",
+      "items": {
+        "type": "string"
+      }
+    },
+    "study_goals": {
+      "type": "array",
+      "description": "User's study goals",
+      "items": {
+        "type": "object",
+        "properties": {
+          "goal": {
+            "type": "string"
+          },
+          "target_date": {
+            "type": "string",
+            "format": "date"
+          },
+          "priority": {
+            "type": "string",
+            "enum": [
+              "low",
+              "medium",
+              "high"
+            ]
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "not_started",
+              "in_progress",
+              "completed"
+            ]
+          }
+        }
+      }
+    },
+    "productivity_focus_areas": {
+      "type": "array",
+      "description": "Main areas the user wants to focus on",
+      "items": {
+        "type": "string",
+        "enum": [
+          "dsa_practice",
+          "english_improvement",
+          "ai_ml_learning",
+          "competitive_programming",
+          "system_design",
+          "web_development",
+          "morning_routine",
+          "fitness",
+          "reading",
+          "deep_work"
+        ]
+      }
+    },
+    "dsa_skill_levels": {
+      "type": "object",
+      "description": "Skill level for each DSA topic",
+      "properties": {
+        "arrays_two_pointers": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "linked_lists": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "stacks_queues": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "binary_trees": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "binary_search": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "dynamic_programming": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "graphs_bfs_dfs": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "hash_maps": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "sorting_algorithms": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "recursion_backtracking": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "heaps": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        },
+        "tries": {
+          "type": "string",
+          "enum": [
+            "beginner",
+            "intermediate",
+            "advanced"
+          ]
+        }
+      }
+    },
+    "daily_study_hours_target": {
+      "type": "number"
+    },
+    "preferred_study_time": {
+      "type": "string",
+      "enum": [
+        "early_morning",
+        "morning",
+        "afternoon",
+        "evening",
+        "night"
+      ]
+    },
+    "english_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "elementary",
+        "intermediate",
+        "upper_intermediate",
+        "advanced"
+      ]
+    },
+    "streak_days": {
+      "type": "number",
+      "default": 0
+    },
+    "last_active_date": {
+      "type": "string",
+      "format": "date"
+    }
+  },
+  "required": [],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}

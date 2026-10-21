@@ -1,0 +1,43 @@
+{
+  "name": "ActivityLog",
+  "type": "object",
+  "properties": {
+    "activity": {
+      "type": "string",
+      "description": "What the user is doing"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "study",
+        "exercise",
+        "work",
+        "break",
+        "entertainment",
+        "meditation",
+        "reading",
+        "coding",
+        "other"
+      ],
+      "description": "Activity category"
+    },
+    "logged_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "activity"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
